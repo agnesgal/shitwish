@@ -18,7 +18,7 @@ public class ShitWishController {
 
     @GetMapping("/")
     public String loadIndex(){
-        return "index";
+        return "welcome";
     }
 
 }
