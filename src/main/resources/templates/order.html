@@ -4,6 +4,6 @@
     <div th:replace="header.html :: copy"></div>
 </head>
 <body>
-<h1>Order</h1>
+<h1 th:text="${order.getTempString()}">Order</h1>
 </body>
 </html>
