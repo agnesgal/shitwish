@@ -18,13 +18,13 @@ public class UserController {
     @GetMapping("/user/{01}/profile")
     public String getUserProfile(Model model) throws JSONException{
 
-        JSONObject userData = new JSONObject(readFromUrl("https://microservices-userapp.herokuapp.com/user"));
+        JSONObject userData = new JSONObject(readFromUrl("https://microservices-userapp.herokuapp.com/sampleuser"));
 
         String profilePicture = userData.getString("profilePicture");
         String firstName = userData.getString("firstName");
         String lastName = userData.getString("lastName");
         String phoneNum = userData.getString("phoneNumber");
-        String country = userData.getString("coutry");
+        String country = userData.getString("country");
         String zip = userData.getString("zipCode");
         String city = userData.getString("city");
         String street = userData.getString("street");
