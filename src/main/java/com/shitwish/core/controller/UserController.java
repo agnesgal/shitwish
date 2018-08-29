@@ -15,7 +15,8 @@ import java.net.URL;
 @Controller
 public class UserController {
 
-    @GetMapping("/user/{01}/profile")
+   // @GetMapping("/user/{01}/profile")
+    @GetMapping("/")
     public String getUserProfile(Model model) throws JSONException{
 
         JSONObject userData = new JSONObject(readFromUrl("https://microservices-userapp.herokuapp.com/sampleuser"));
