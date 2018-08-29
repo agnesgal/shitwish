@@ -5,5 +5,28 @@
 </head>
 <body>
 <h1>Product Form</h1>
+<form action="/add">
+    <div id="name">
+        <label for="name">Name of product:</label>
+        <input name="name">
+    </div>
+    <div id="price">
+        <label for="price">Price of product:</label>
+        <input name="price">
+    </div>
+    <div id="description">
+        <label for="description">Description of product:</label>
+        <input name="description">
+    </div>
+    <div id="img_url">
+        <label for="img_url">URL of image:</label>
+        <input name="img_ure">
+    </div>
+    <div id="user_id">
+        <label for="user_id"></label>
+        <input hidden th:value="" name="user_id">
+    </div>
+
+</form>
 </body>
 </html>
