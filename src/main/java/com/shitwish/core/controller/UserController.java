@@ -29,7 +29,7 @@ public class UserController {
         String zip = userData.getString("zipCode");
         String city = userData.getString("city");
         String street = userData.getString("street");
-        String usrID = userData.getString("usrID");
+//      String usrID = userData.getString("usrID");
         String email = userData.getString("email");
 
         model.addAttribute("userName", firstName + " " + lastName);
@@ -39,7 +39,7 @@ public class UserController {
         model.addAttribute("zip", zip);
         model.addAttribute("city", city);
         model.addAttribute("street", street);
-        model.addAttribute("usrID", usrID);
+//      model.addAttribute("usrID", usrID);
         model.addAttribute("email", email);
 
         return "user_profile";
