@@ -18,9 +18,9 @@ public class CartController {
     @Autowired
     CartService cartService;
 
-    @GetMapping("/cart")
-    public String getCartListById(Model model) throws IOException {
-        model.addAttribute("cartList", cartService.getCartList());
+    @GetMapping("/cart/{user_id}")
+    public String getCartListById(@PathVariable ("user_id") int user_id, Model model) throws IOException {
+        //model.addAttribute("cartListById", cartService.getCartListById(user_id));
         return "index";
     }
 
