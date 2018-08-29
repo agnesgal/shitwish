@@ -6,6 +6,7 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
+
 <div th:replace="navbar.html :: copy"></div>
 <div class="container">
     <div class="row">
@@ -13,43 +14,39 @@
 
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Béláim Béla</h3>
+                    <h3 class="panel-title"><p th:text="${userName}"></p></h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-3 col-lg-3 " align="center">
-                            <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive">
+                            <img class="img-circle img-responsive" th:src="${profilePicture}" alt="User Pic"/>
                         </div>
                         <div class=" col-md-9 col-lg-9 ">
                             <table class="table table-user-information">
                                 <tbody>
                                     <tr>
                                         <td>e-mail:</td>
-                                        <td>diszko.diktator@belga.hu</td>
+                                        <td th:text="${email}"></td>
                                     </tr>
                                     <tr>
                                         <td>Phone number:</td>
-                                        <td>06/23/2013</td>
+                                        <td th:text="${phoneNum}"></td>
                                     </tr>
                                     <tr>
-                                        <td>Planet</td>
-                                        <td>Adat ide</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Country</td>
-                                        <td>Nepal</td>
-                                    </tr>
-                                    <tr>
-                                        <td>City:</td>
-                                        <td>Budapest</td>
+                                        <td>Country:</td>
+                                        <td th:text="${country}"></td>
                                     </tr>
                                     <tr>
                                         <td>ZipCode:</td>
-                                        <td>1158</td>
+                                        <td th:text="${zip}"></td>
                                     </tr>
                                     <tr>
-                                        <td>Adress:</td>
-                                        <td>Fityfasz street 8</td>
+                                        <td>City:</td>
+                                        <td th:text="${city}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Street:</td>
+                                        <td th:text="${street}"></td>
                                     </tr>
                                 </tbody>
                             </table>
