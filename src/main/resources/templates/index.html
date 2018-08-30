@@ -21,6 +21,8 @@
         <link rel="stylesheet" href="/css/templatemo-style.css">
         <link rel="stylesheet" href="/css/lightbox.css">
         <link rel="stylesheet" href="/css/modal.css">
+        <link rel="stylesheet" href="/css/form_styling.css">
+
         <link rel="shortcut icon" href="/static/img/favicon.ico">
 
         <script src="/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -44,7 +46,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#" class="scroll-top">Home</a></li>
                         <li><a href="#" class="scroll-link" data-id="about">Marketplace</a></li>
-                        <li><a href="#" class="scroll-link" data-id="blog">You</a></li>
+                        <li><a href="/user" class="scroll-link" data-id="blog">You</a></li>
                         <li><a href="#" class="scroll-link" data-id="contact-us">Contact Us</a></li>
                         <li><a href="/logout2" class="scroll-link">Logout</a></li>
                         <li><img src="/img/cart.png" height="42" width="42" style="margin-top: 15px" id="cartBtn"></li>
@@ -105,6 +107,7 @@
 
     <!--End of product list-->
 
+
     <div class="tabs-content" id="blog">
         <div class="container">
             <div class="row">
@@ -150,6 +153,57 @@
                     </div>
 
                     <!--If something is detailed here could come that code part, otherwise this is the empty right side at profil section-->
+
+
+
+                    <section id="portfolio">
+                        <div class="content-wrapper">
+                            <div class="inner-container container">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="projects-holder-3">
+                                            <div class="projects-holder">
+                                                <div class="row">
+                                                    <div class="addProductContainer">
+                                                        <table class="table table-user-information">
+                                                        <h3 class="add-product-form">Add new product</h3>
+                                                        <form class="add-product-form section-heading" id="add_form" action="/add" method="post">
+                                                            <div class="add-product-form" id="product-name">
+                                                                <label for="product-name">Name of product:</label>
+                                                                <input name="product-name">
+                                                            </div>
+                                                            <div class="add-product-form" id="price">
+                                                                <label for="price">Price of product:</label>
+                                                                <input name="price">
+                                                            </div>
+                                                            <div class="add-product-form" id="descr">
+                                                                <label for="descr">Description of product:</label>
+                                                                <input name="descr">
+                                                            </div>
+                                                            <div class="add-product-form" id="img_url">
+                                                                <label for="img_url">URL of image:</label>
+                                                                <input name="img_url">
+                                                            </div>
+                                                            <div class="add-product-form" id="user_id">
+                                                                <label for="user_id"></label>
+                                                                <input hidden value="666" name="user_id">
+                                                            </div>
+                                                            <button class="btn" id="add_btn" type="submit" >Submit</button>
+
+                                                        </form>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
                     </div>
                 </div>
             </div>
