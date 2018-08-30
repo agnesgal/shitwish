@@ -48,6 +48,7 @@
                         <li><a href="#" class="scroll-link" data-id="about">Marketplace</a></li>
                         <li><a href="#" class="scroll-link" data-id="blog">You</a></li>
                         <li><a href="#" class="scroll-link" data-id="contact-us">Contact Us</a></li>
+                        <li><a href="/logout2" class="scroll-link">Logout</a></li>
                         <li><img src="/img/cart.png" height="42" width="42" style="margin-top: 15px" id="cartBtn"></li>
                     </ul>
 
@@ -55,8 +56,10 @@
                         <div class="modal-content">
                             <span class="close">&times;</span>
                             <h4>Your items:</h4>
-                            <div th:each="item : ${cartListById}">
-                                <p th:text="${item}">Product list</p>
+                            <div th:each="product : ${productList}">
+                                <img height="110" width="110" th:src="${product.getImgUrl()}">
+                                <p th:text="${product.getName()}">Product name</p>
+                                <p th:text="${product.getPrice()}">Product price</p>
                             </div>
                             <a href="/checkout"><button class="btn-default">Checkout</button></a>
                         </div>
@@ -93,7 +96,7 @@
                         <div class="line-dec"></div>
                         <p th:text="${product.description}">Curabitur non risus fringilla libero accumsan molestie et quis justo. Cras aliquam tempor sem, vestibulum facilisis dui. Mauris malesuada porta.</p>
                         <div class="primary-blue-button">
-                            <a href="#" class="scroll-link" data-id="portfolio">Add to Cart</a>
+                            <a th:href="@{'/addToCart/6/' + ${product.id}}" data-id="portfolio">Add to Cart</a>
                         </div>
                     </div>
                 </div>
