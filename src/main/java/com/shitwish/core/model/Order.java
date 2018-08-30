@@ -2,38 +2,32 @@ package com.shitwish.core.model;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class Order {
 
-    private int userId;
-    private ArrayList<Integer> productIdList;
-    Date date;
-    String tempString;
+    public int order_id;
+    private Date date;
+    private ArrayList<Integer> products;
 
-    public Order(int userId, ArrayList<Integer> productList, Date date) {
-        this.userId = userId;
-        this.productIdList = productList;
+    public Order() {
+    }
+
+    public Order(int order_id, Date date, ArrayList<Integer> productList) {
+        this.order_id = order_id;
+        this.products = productList;
         this.date = date;
     }
 
-    public Order(String tempString) {
-        this.tempString = tempString;
-    }
 
-    public String getTempString() {
-        return tempString;
-    }
-
-    public ArrayList<Integer> getProductIdList() {
-        return productIdList;
+    public ArrayList<Integer> getProducts() {
+        return products;
     }
 
     public Date getDate() {
         return date;
     }
 
-    public int getUser() {
-        return userId;
+    public int getOrderId() {
+        return order_id;
     }
 }

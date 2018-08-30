@@ -1,5 +1,6 @@
 package com.shitwish.core.controller;
 
+import com.shitwish.core.model.Order;
 import com.shitwish.core.model.User;
 import com.shitwish.core.service.OrderService;
 import com.shitwish.core.service.ProductService;
@@ -19,7 +20,8 @@ public class OrderController {
     @GetMapping(value = "/order")
     public String orderhistory( Model model) {
         model.addAttribute("user");
-        model.addAttribute("order", orderService.getOrderHistory(1));
+        Order[] orders = orderService.getOrderHistory(1);
+        model.addAttribute("order_history", orders);
         return "order";
     }
 }

@@ -4,6 +4,10 @@
     <div th:replace="header.html :: copy"></div>
 </head>
 <body>
-<h1 th:text="${order.getTempString()}">Order</h1>
+<h1>Order</h1>
+<div th:each="order,iterStat : ${order_history}">
+    <div th:text="${order.getOrderId()}"> </div>
+
+</div>
 </body>
 </html>
