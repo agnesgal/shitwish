@@ -7,8 +7,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.rmi.ServerError;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

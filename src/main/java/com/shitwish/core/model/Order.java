@@ -5,22 +5,22 @@ import java.util.Date;
 
 public class Order {
 
-    public int order_id;
+    private int orderId;
     private Date date;
-    private ArrayList<Integer> products;
+    private int[] productIds;
 
     public Order() {
     }
 
-    public Order(int order_id, Date date, ArrayList<Integer> productList) {
-        this.order_id = order_id;
-        this.products = productList;
+    public Order(int orderId, Date date, int[] productIds) {
+        this.orderId = orderId;
+        this.productIds = productIds;
         this.date = date;
     }
 
 
-    public ArrayList<Integer> getProducts() {
-        return products;
+    public int[] getProductIds() {
+        return productIds;
     }
 
     public Date getDate() {
@@ -28,6 +28,6 @@ public class Order {
     }
 
     public int getOrderId() {
-        return order_id;
+        return orderId;
     }
 }
