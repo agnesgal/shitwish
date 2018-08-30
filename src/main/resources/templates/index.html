@@ -37,7 +37,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#" class="navbar-brand scroll-top"><em>S</em>W</a>
+                    <a href="/" class="navbar-brand scroll-top"><em>S</em>W</a>
                 </div>
 
                 <div id="main-nav" class="collapse navbar-collapse">
@@ -56,7 +56,7 @@
                             <div th:each="item : ${cartListById}">
                                 <p th:text="${item}">Product list</p>
                             </div>
-                            <button class="btn-default">Checkout</button>
+                            <a href="/checkout"><button class="btn-default">Checkout</button></a>
                         </div>
                     </div>
                 </div>

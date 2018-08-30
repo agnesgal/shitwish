@@ -33,4 +33,9 @@ public class CartController {
     public String welcome() throws IOException {
         return "welcome";
     }
+
+    @GetMapping("/checkout")
+    public String checkout() throws IOException {
+        return "checkout";
+    }
 }
