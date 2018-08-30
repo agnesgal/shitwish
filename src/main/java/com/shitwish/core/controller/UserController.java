@@ -8,6 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
@@ -48,6 +49,7 @@ public class UserController {
 
             resultArr = new ObjectMapper().readValue(response.getBody(), HashMap[].class);
             HashMap result = resultArr[0];
+            System.out.println(result);
 
             model.addAttribute("userName", result.get("name"));
             model.addAttribute("profilePicture", result.get("picture"));
@@ -66,34 +68,8 @@ public class UserController {
         return "index";
     }
 
-    private String readFromUrl(String urlStr) {
-        try {
-            URL url = new URL(urlStr);
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            con.setRequestMethod("GET");
-            con.setRequestProperty("User-Agent", "Mozilla/5.0");
-
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            String inputLine;
-            StringBuffer content = new StringBuffer();
-            while ((inputLine = in.readLine()) != null) {
-                content.append(inputLine);
-            }
-            in.close();
-            con.disconnect();
-            return content.toString();
-        }
-        catch (IOException e) {
-            System.out.println(e.getMessage());
-            return "";
-        }
+    @PostMapping("/microservices-userapp.herokuapp.com/user")
+    public String postUserData() {
+        return "someshit";
     }
-
 }
-
-
-/* logout
-    editUserData
-    viewOrderHistory
-
- */
