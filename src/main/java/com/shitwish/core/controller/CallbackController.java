@@ -29,7 +29,7 @@ public class CallbackController {
 
     public CallbackController() {
         this.redirectOnFail = "/";
-        this.redirectOnSuccess = "/user";
+        this.redirectOnSuccess = "/products";
     }
 
     @RequestMapping(value = "/callback", method = RequestMethod.GET)

@@ -2,6 +2,7 @@ package com.shitwish.core.security;
 
 import com.auth0.AuthenticationController;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -60,6 +61,7 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
+                .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 .antMatchers("/callback", "/welcome","/", "/login2").permitAll()
                 .antMatchers("/**").authenticated()
                 .and()
