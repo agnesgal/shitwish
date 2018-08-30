@@ -33,4 +33,9 @@ public class CartController {
     public String checkout() throws IOException {
         return "checkout";
     }
+
+    @GetMapping("/zsindex")
+    public String zsindex() throws IOException {
+        return "zsindex";
+    }
 }
