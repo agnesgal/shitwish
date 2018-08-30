@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <div th:replace="header.html :: copy"></div>
     <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -10,28 +9,28 @@
 </head>
 <body>
 <h1>Product Form</h1>
-<form class="add_form" >
+<form id="add_form" action="/add" method="post">
     <div id="name">
         <label for="name">Name of product:</label>
-        <input id="faszomat" name="name">
+        <input name="name">
     </div>
     <div id="price">
         <label for="price">Price of product:</label>
-        <input id="ittis" name="price">
+        <input name="price">
     </div>
     <div id="descr">
         <label for="descr">Description of product:</label>
-        <input id="nakezdődik" name="descr">
+        <input name="descr">
     </div>
     <div id="img_url">
         <label for="img_url">URL of image:</label>
-        <input id="buzi" name="img_url">
+        <input name="img_url">
     </div>
     <div id="user_id">
         <label for="user_id"></label>
-        <input id="faszom" hidden value="666" name="user_id">
+        <input hidden value="666" name="user_id">
     </div>
-    <button id="add_btn" >Submit</button>
+    <button id="add_btn" type="submit" >Submit</button>
 
 </form>
 </body>
