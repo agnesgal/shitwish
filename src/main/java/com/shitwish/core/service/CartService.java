@@ -6,6 +6,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -38,15 +41,19 @@ public class CartService {
             productList.add(product);
         }
 
-        for (Product prod : productList) {
-            System.out.println(prod.getName());
-        }
-
         return productList;
     }
 
     public void addToCart(int user_id, int product_id) throws IOException {
-        final String cartUrl = "https://shitshop-cart.herokuapp.com/cart/" + user_id + "/" + product_id;
-        restTemplateBuilder.build().getForEntity(cartUrl, String.class);
+        String cartUrl = "https://shitshop-cart.herokuapp.com/cart/" + user_id + "/" + product_id;
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        HttpEntity<Object> request = new HttpEntity<Object>("alma", headers);
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> response = restTemplate.postForEntity(cartUrl, request, String.class);
+        System.out.println(response.toString());
     }
 }

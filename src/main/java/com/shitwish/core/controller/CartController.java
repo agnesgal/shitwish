@@ -25,10 +25,11 @@ public class CartController {
         return "index";
     }
 
-//    @PostMapping("addToCart/{user_id}/{product_id}")
-//    public void addToCart(@PathVariable("user_id") int user_id, @PathVariable("product") int product_id) throws IOException {
-//        cartService.addToCart(user_id, product_id);
-//    }
+    @GetMapping("/addToCart/{user_id}/{product_id}")
+    public String addToCart(@PathVariable("user_id") int user_id, @PathVariable("product_id") int product_id) throws IOException {
+        cartService.addToCart(user_id, product_id);
+        return "redirect:/cart/" + user_id;
+    }
 
     @GetMapping("/checkout")
     public String checkout() throws IOException {

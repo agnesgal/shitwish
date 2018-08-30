@@ -93,7 +93,7 @@
                         <div class="line-dec"></div>
                         <p th:text="${product.description}">Curabitur non risus fringilla libero accumsan molestie et quis justo. Cras aliquam tempor sem, vestibulum facilisis dui. Mauris malesuada porta.</p>
                         <div class="primary-blue-button">
-                            <a href="#" class="scroll-link" data-id="portfolio">Add to Cart</a>
+                            <a th:href="@{'/addToCart/6/' + ${product.id}}" data-id="portfolio">Add to Cart</a>
                         </div>
                     </div>
                 </div>
