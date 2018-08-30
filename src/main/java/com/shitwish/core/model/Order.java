@@ -1,18 +1,19 @@
 package com.shitwish.core.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Order {
 
-    private User user;
-    private List<Product> productList;
+    private int userId;
+    private ArrayList<Integer> productIdList;
     Date date;
     String tempString;
 
-    public Order(User user, List<Product> productList, Date date) {
-        this.user = user;
-        this.productList = productList;
+    public Order(int userId, ArrayList<Integer> productList, Date date) {
+        this.userId = userId;
+        this.productIdList = productList;
         this.date = date;
     }
 
@@ -24,15 +25,15 @@ public class Order {
         return tempString;
     }
 
-    public List<Product> getProductList() {
-        return productList;
+    public ArrayList<Integer> getProductIdList() {
+        return productIdList;
     }
 
     public Date getDate() {
         return date;
     }
 
-    public User getUser() {
-        return user;
+    public int getUser() {
+        return userId;
     }
 }

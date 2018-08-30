@@ -1,6 +1,9 @@
 package com.shitwish.core.controller;
 
+import com.shitwish.core.model.User;
 import com.shitwish.core.service.OrderService;
+import com.shitwish.core.service.ProductService;
+import com.shitwish.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,8 +17,9 @@ public class OrderController {
 
 
     @GetMapping(value = "/order")
-    public String orderView( Model model) {
-        model.addAttribute("order", orderService.getOrder());
+    public String orderhistory( Model model) {
+        model.addAttribute("user");
+        model.addAttribute("order", orderService.getOrderHistory(1));
         return "order";
     }
 }
