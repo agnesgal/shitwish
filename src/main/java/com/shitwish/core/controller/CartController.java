@@ -29,13 +29,13 @@ public class CartController {
         return cartService.addToCart(user_id, product_id);
     }
 
-    @GetMapping("/welcome")
+    /*@GetMapping("/welcome")
     public String welcome() throws IOException {
         return "welcome";
-    }
+    }*/
 
-    @GetMapping("/checkout")
+    /*@GetMapping("/checkout")
     public String checkout() throws IOException {
         return "checkout";
-    }
+    }*/
 }

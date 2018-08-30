@@ -28,8 +28,8 @@ public class CallbackController {
     private final String redirectOnSuccess;
 
     public CallbackController() {
-        this.redirectOnFail = "/welcome";
-        this.redirectOnSuccess = "/";
+        this.redirectOnFail = "/";
+        this.redirectOnSuccess = "/user";
     }
 
     @RequestMapping(value = "/callback", method = RequestMethod.GET)

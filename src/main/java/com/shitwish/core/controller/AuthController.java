@@ -41,14 +41,4 @@ public class AuthController {
                 .build();
     }
 
-
-    /*https://teammate.eu.auth0.com/authorize?
-    audience=YOUR_API_AUDIENCE&
-    scope=openid%20profile%20email%20read:contacts&
-    response_type=id_token%20token&
-    client_id=LiLXIROa1xWfMx-CsgWdOnYpTt_y_97u&
-    redirect_uri=https://YOUR_APP/callback&
-    nonce=YOUR_CRYPTOGRAPHIC_NONCE
-            state=YOUR_OPAQUE_VALUE*/
-
 }

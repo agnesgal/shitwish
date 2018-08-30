@@ -19,7 +19,7 @@ public class ProductController {
 
     JSONReader jsonReader = new JSONReader();
 
-    @GetMapping("/")
+    @GetMapping("/products")
     public String displayProducts(Model model){
 
         JSONObject allProductsJSON = jsonReader.getJson("http://product-wishlist-byteme.herokuapp.com/product");

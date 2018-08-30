@@ -21,7 +21,7 @@ public class LoginController {
     private AppConfig appConfig;
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @RequestMapping(value = "/welcome", method = RequestMethod.GET)
+    @RequestMapping(value = "/login2", method = RequestMethod.GET)
     protected String login(final HttpServletRequest req) {
         logger.debug("Performing login");
         String redirectUri = req.getScheme() + "://" + req.getServerName() + ":" + req.getServerPort() + "/callback";

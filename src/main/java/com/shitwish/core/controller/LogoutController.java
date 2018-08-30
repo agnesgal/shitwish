@@ -14,7 +14,7 @@ public class LogoutController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    @RequestMapping(value = "/logout2", method = RequestMethod.GET)
     protected String logout(final HttpServletRequest req) {
         logger.debug("Performing logout");
         invalidateSession(req);
