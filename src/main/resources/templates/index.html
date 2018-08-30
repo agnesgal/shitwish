@@ -150,8 +150,36 @@
                         <div class="section-heading">
 
                         <!--Place for the user Profil and/or order history-->
-                            <h4>Your Profile</h4>
+                            <h4 th:text="${userName}"></h4>
                             <div class="line-dec"></div>
+                            <table class="table table-user-information">
+                                <tbody>
+                                <tr>
+                                    <td>e-mail:</td>
+                                    <td th:text="${email}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Phone number:</td>
+                                    <td th:text="${phoneNum}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Country:</td>
+                                    <td th:text="${country}"></td>
+                                </tr>
+                                <tr>
+                                    <td>ZipCode:</td>
+                                    <td th:text="${zip}"></td>
+                                </tr>
+                                <tr>
+                                    <td>City:</td>
+                                    <td th:text="${city}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Street:</td>
+                                    <td th:text="${street}"></td>
+                                </tr>
+                                </tbody>
+                            </table>
                             <p>Product history</p>
                             <ul class="tabs clearfix" data-tabgroup="first-tab-group">
                                 <li><a href="#tab1" class="active">Termek</a></li>
@@ -160,7 +188,8 @@
                             </ul>
                         </div>
                     </div>
-                        <!--If something is detailed here could come that code part, otherwise this is the empty right side at profil section-->
+
+                    <!--If something is detailed here could come that code part, otherwise this is the empty right side at profil section-->
                     </div>
                 </div>
             </div>
@@ -230,6 +259,7 @@
                        <br>Design: <a href="http://www.templatemo.com">ShitWish Company</a></p>
                     </div>
                 </div>
+
                 <div class="col-md-4 col-sm-12">
                     <div class="location">
                         <h4>Location</h4>
