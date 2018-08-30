@@ -19,7 +19,7 @@ public class CartController {
     CartService cartService;
 
     @GetMapping("/cart/{user_id}")
-    public String getCartListById(@PathVariable ("user_id") int user_id, Model model) throws IOException {
+    public String getCartListById(@PathVariable("user_id") int user_id, Model model) throws IOException {
         model.addAttribute("productList", cartService.getCartListById(user_id));
         return "index";
     }
@@ -30,12 +30,13 @@ public class CartController {
         return "redirect:/cart/" + user_id;
     }
 
+
     /*@GetMapping("/welcome")
     public String welcome() throws IOException {
         return "welcome";
     }*/
 
-    /*@GetMapping("/checkout")
+    @GetMapping("/checkout")
     public String checkout() throws IOException {
         return "checkout";
     }
