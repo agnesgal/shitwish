@@ -4,20 +4,22 @@ import java.util.ArrayList;
 
 public class Cart {
 
-    private User user;
-    private ArrayList<Integer> productList;
+    private int userId;
+    private ArrayList<String> cartList;
 
-
-    public ArrayList<Integer> getProductList() {
-        return productList;
+    public int getUserId() {
+        return userId;
     }
 
-    public void addProduct(int productId) {
-        productList.add(productId);
+    public void setUser_id(int userId) {
+        this.userId = userId;
     }
 
-    public Cart(User user, ArrayList<Integer> productList) {
-        this.user = user;
-        this.productList = productList;
+    public ArrayList<String> getCartList() {
+        return cartList;
+    }
+
+    public void setCartList(ArrayList<String> cartList) {
+        this.cartList = cartList;
     }
 }
