@@ -16,25 +16,5 @@ import java.io.IOException;
 @Controller
 public class ShitWishController {
 
-    @Autowired
-    private ShitWishService shitWishService;
-
-    private String USERAPIURL = "https://microservices-userapp.herokuapp.com/user";
-    JSONReader jsonReader = new JSONReader();
-    public JSONObject userTestObject = jsonReader.getJson(USERAPIURL);
-
-    @GetMapping("/")
-    public String loadIndex(Model model){
-        try {
-            String testname = userTestObject.get("name").toString();
-            model.addAttribute("jsonbullshit2", testname);
-        } catch (JSONException ex){
-            model.addAttribute("jsonbullshit2", "something went wrong");
-            ex.printStackTrace();
-        }
-        model.addAttribute("jsonbullshit", userTestObject);
-
-        return "index";
-    }
 
 }
