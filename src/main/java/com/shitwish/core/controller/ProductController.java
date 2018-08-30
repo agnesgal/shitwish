@@ -93,7 +93,7 @@ public class ProductController {
 
             RestTemplate restTemplate = new RestTemplate();
             ResponseEntity<String> response = restTemplate.postForEntity( "https://product-wishlist-byteme.herokuapp.com/product", request , String.class );
-            System.out.println(response.toString());
+            System.out.println(newForm.toString());
             return "redirect:/";
         } catch (Exception e) {
             e.printStackTrace();
