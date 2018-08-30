@@ -3,15 +3,8 @@ package com.shitwish.core.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
-import jdk.nashorn.internal.parser.JSONParser;
 import org.json.JSONException;
-import org.json.JSONObject;
-import org.springframework.boot.json.JacksonJsonParser;
-import org.springframework.boot.json.JsonParser;
-import org.springframework.http.HttpRequest;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -29,7 +21,6 @@ import java.util.HashMap;
 @Controller
 public class UserController {
 
-   // @GetMapping("/user/{01}/profile")
     @GetMapping("/user")
     public String getUserProfile(Model model, HttpServletRequest request) throws JSONException{
 
