@@ -22,6 +22,6 @@ public class OrderController {
         model.addAttribute("user");
         Order[] orders = orderService.getOrderHistory(1);
         model.addAttribute("order_history", orders);
-        return "order";
+        return "index";
     }
 }
