@@ -53,23 +53,26 @@ public class ProductController {
 
     @GetMapping("/product")
     public String displayOneProduct(Model model, @RequestParam("id") String id){
+        try {
+            JSONObject productJSON = jsonReader.getJson("http://product-wishlist-byteme.herokuapp.com/product" + id);
+            Product product = new Product(productJSON.getBoolean("is_active"),
+                    productJSON.getBoolean("is_incart"),
+                    productJSON.getInt("price"),
+                    productJSON.getInt("user_id"),
+                    productJSON.getString("name"),
+                    productJSON.getString("img"),
+                    productJSON.getString("descr"));
 
-        //TODO request to heroku product api, add result to model
-        //Product product = ???
-
-        return "product_view";
+            model.addAttribute("product", product);
+            return "product_view";
+        } catch (JSONException ex){
+            ex.printStackTrace();
+            return "error";
+        }
     }
 
     @GetMapping("/add")
-    public String showNewProductForm(){
+    public String showNewProductForm(){ return "product_form"; }
 
-        return "product_form";
-    }
 
-    @PostMapping("/add")
-    public String addNewProduct(){
-        RestTemplate restTemplate = new RestTemplate();
-
-        return "redirect:/";
-    }
 }
