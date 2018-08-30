@@ -1,18 +1,28 @@
 package com.shitwish.core.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mashape.unirest.http.Unirest;
 import com.shitwish.core.model.Product;
 import com.shitwish.core.service.JSONReader;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.boot.context.properties.source.ConfigurationPropertyName;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Controller
 public class ProductController {
@@ -71,5 +81,28 @@ public class ProductController {
     @GetMapping("/add")
     public String showNewProductForm(){ return "product_form"; }
 
+    @PostMapping("/add")
+    public String addNewProduct(@RequestBody MultiValueMap<String, String> formData){
+
+        try {
+            Map newForm = formData.toSingleValueMap();
+
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+
+            HttpEntity<Map<String, String>> request = new HttpEntity<Map<String, String>>(newForm, headers);
+
+            RestTemplate restTemplate = new RestTemplate();
+            ResponseEntity<String> response = restTemplate.postForEntity( "https://product-wishlist-byteme.herokuapp.com/product", request , String.class );
+            System.out.println(newForm.toString());
+            return "redirect:/";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
+
+
+
+    }
 
 }
