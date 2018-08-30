@@ -39,4 +39,18 @@ public class Parser {
             inputStream.close();
         }
     }
+
+    public <T> T readJsonFromUrlSplitted(String url, Class<T> klass) throws IOException, JSONException {
+        InputStream inputStream = new URL(url).openStream();
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, Charset.forName("UTF-8")));
+            String jsonText = readAll(bufferedReader);
+            jsonText = jsonText.split(":", 2)[1];
+            jsonText = jsonText.substring(0, jsonText.length() - 1);
+            return gson.fromJson(jsonText, klass);
+        }
+        finally {
+            inputStream.close();
+        }
+    }
 }

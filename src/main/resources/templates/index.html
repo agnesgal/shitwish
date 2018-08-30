@@ -53,8 +53,10 @@
                         <div class="modal-content">
                             <span class="close">&times;</span>
                             <h4>Your items:</h4>
-                            <div th:each="item : ${cartListById}">
-                                <p th:text="${item}">Product list</p>
+                            <div th:each="product : ${productList}">
+                                <img height="110" width="110" th:src="${product.getImgUrl()}">
+                                <p th:text="${product.getName()}">Product name</p>
+                                <p th:text="${product.getPrice()}">Product price</p>
                             </div>
                             <a href="/checkout"><button class="btn-default">Checkout</button></a>
                         </div>

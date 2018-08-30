@@ -34,7 +34,8 @@ public class ProductController {
                 Object[] keyList = keys.toArray();
 
                 JSONObject productJSON = allProductsJSON.getJSONObject(String.valueOf(keyList[i]));
-                products.add(new Product(productJSON.getBoolean("is_active"),
+                products.add(new Product(String.valueOf(keyList[i]),
+                                         productJSON.getBoolean("is_active"),
                                          productJSON.getBoolean("is_incart"),
                                          productJSON.getInt("price"),
                                          productJSON.getInt("user_id"),
@@ -55,7 +56,8 @@ public class ProductController {
     public String displayOneProduct(Model model, @RequestParam("id") String id){
         try {
             JSONObject productJSON = jsonReader.getJson("http://product-wishlist-byteme.herokuapp.com/product" + id);
-            Product product = new Product(productJSON.getBoolean("is_active"),
+            Product product = new Product(String.valueOf(id),
+                    productJSON.getBoolean("is_active"),
                     productJSON.getBoolean("is_incart"),
                     productJSON.getInt("price"),
                     productJSON.getInt("user_id"),
