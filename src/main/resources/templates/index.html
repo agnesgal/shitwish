@@ -42,7 +42,7 @@
 
                 <div id="main-nav" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#" class="scroll-top">Home</a></li>
+                        <li><a href="#" class="scrogit ll-top">Home</a></li>
                         <li><a href="#" class="scroll-link" data-id="about">Marketplace</a></li>
                         <li><a href="#" class="scroll-link" data-id="blog">You</a></li>
                         <li><a href="#" class="scroll-link" data-id="contact-us">Contact Us</a></li>
@@ -110,7 +110,8 @@
             <div class="row">
                 <div class="wrapper">
                     <div class="col-md-4">
-                        <div class="section-heading">
+                        <iv class="section-heading">
+
 
                         <!--Place for the user Prfont-size:15px;color:whiteofil and/or order history-->
                             <h3>Your profile:</h3>
@@ -143,6 +144,77 @@
                                 </tr>
                                 </tbody>
                             </table>
+                            <p></p>
+                            <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal">
+                                Edit
+                            </button>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Edit user data</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="https://microservices-userapp.herokuapp.com/user" method="post">
+                                                <div class="row">
+                                                    <div>
+                                                        <fieldset>
+                                                            <input name="firstName" th:type="text" class="form-control" placeholder="Your first name..." required="">
+                                                        </fieldset>
+                                                    </div>
+                                                    <div>
+                                                        <fieldset>
+                                                            <input name="lastName" th:type="text" class="form-control" placeholder="Your last name..." required="">
+                                                        </fieldset>
+                                                    </div>
+                                                    <div>
+                                                        <fieldset>
+                                                            <input name="email" th:type="email" class="form-control" id="email" placeholder="Your email..." required="">
+                                                        </fieldset>
+                                                    </div>
+                                                    <div>
+                                                        <fieldset>
+                                                            <textarea name="phoneNumber" th:type="text" class="form-control" id="message" placeholder="Your phone number..." required=""></textarea>
+                                                        </fieldset>
+                                                    </div>
+                                                    <div>
+                                                        <fieldset>
+                                                            <textarea name="country" th:type="text" class="form-control" id="message" placeholder="Your country..." required=""></textarea>
+                                                        </fieldset>
+                                                    </div>
+                                                    <div>
+                                                        <fieldset>
+                                                            <textarea name="city" th:type="text" class="form-control" id="message" placeholder="Your city..." required=""></textarea>
+                                                        </fieldset>
+                                                    </div>
+                                                    <div>
+                                                        <fieldset>
+                                                            <textarea name="zipCode" th:type="text" class="form-control" id="message" placeholder="Your Zip code..." required=""></textarea>
+                                                        </fieldset>
+                                                    </div>
+                                                    <div>
+                                                        <fieldset>
+                                                            <textarea name="street" th:type="text" class="form-control" id="message" placeholder="Your street address ..." required=""></textarea>
+                                                        </fieldset>
+                                                    </div>
+                                                    <div>
+                                                        <fieldset>
+                                                            <button type="submit" id="form-submit" class="btn">Submit</button>
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <span class="tabs clearfix" data-tabgroup="first-tab-group">
                                <a href="#" class="active">Order History</a>
                             </span>
@@ -205,6 +277,7 @@
         </div>
     </div>
 
+
     <section class="row tm-margin-b-l">
         <div class="col-12">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2695.2245969442165!2d19.05574321562705!3d47.50501707917811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dc6ce5ea866d%3A0x1e1303babc750580!2sCodecool+Budapest!5e0!3m2!1shu!2shu!4v1530778397743" width="1500" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>                    </div>
@@ -249,8 +322,8 @@
                 </div>
             </div>
         </div>
-    </footer>
 
+    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
