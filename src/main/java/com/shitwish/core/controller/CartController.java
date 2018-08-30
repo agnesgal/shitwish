@@ -20,13 +20,14 @@ public class CartController {
 
     @GetMapping("/cart/{user_id}")
     public String getCartListById(@PathVariable ("user_id") int user_id, Model model) throws IOException {
-        model.addAttribute("cartListById", cartService.getCartListById(user_id));
+        model.addAttribute("productList", cartService.getCartListById(user_id));
         return "index";
     }
 
-    @PostMapping("addToCart/{user_id}/{product_id}")
-    public JSONObject addToCart(@PathVariable("user_id") int user_id, @PathVariable("product") int product_id) throws IOException {
-        return cartService.addToCart(user_id, product_id);
+    @GetMapping("/addToCart/{user_id}/{product_id}")
+    public String addToCart(@PathVariable("user_id") int user_id, @PathVariable("product_id") int product_id) throws IOException {
+        cartService.addToCart(user_id, product_id);
+        return "redirect:/cart/" + user_id;
     }
 
     /*@GetMapping("/welcome")
@@ -37,5 +38,11 @@ public class CartController {
     /*@GetMapping("/checkout")
     public String checkout() throws IOException {
         return "checkout";
-    }*/
+    }
+
+    @GetMapping("/card")
+    public String payment(Model model) throws IOException {
+        model.addAttribute("cartPrices", "45");
+        return "card";
+    }
 }

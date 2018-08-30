@@ -1,12 +1,16 @@
 package com.shitwish.core.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Product {
+    public String id;
     boolean isActive;
     boolean isInCart;
     int price;
     int userId;
     String name;
-    String imgUrl;
+    String img;
 
     public boolean isActive() {
         return isActive;
@@ -49,11 +53,11 @@ public class Product {
     }
 
     public String getImgUrl() {
-        return imgUrl;
+        return img;
     }
 
     public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
+        this.img = imgUrl;
     }
 
     public String getDescription() {
@@ -64,14 +68,15 @@ public class Product {
         this.description = description;
     }
 
-    public Product(boolean isActive, boolean isInCart, int price, int userId, String name, String imgUrl, String description) {
+    public Product(String id, boolean isActive, boolean isInCart, int price, int userId, String name, String img, String description) {
 
+        this.id = id;
         this.isActive = isActive;
         this.isInCart = isInCart;
         this.price = price;
         this.userId = userId;
         this.name = name;
-        this.imgUrl = imgUrl;
+        this.img = img;
         this.description = description;
     }
 
