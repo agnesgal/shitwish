@@ -42,7 +42,7 @@ public class UserController {
 //      model.addAttribute("usrID", usrID);
         model.addAttribute("email", email);
 
-        return "user_profile";
+        return "index";
     }
 
     private String readFromUrl(String urlStr) {
