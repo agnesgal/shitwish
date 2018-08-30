@@ -203,7 +203,7 @@ p {
 	width: 100%;
   	padding-top: 35vh;
   	text-align: center;
-  	background-image: url(../img/banner_bg.jpg);
+  	background-image: url(../images/banner_bg.jpg);
   	vertical-align: middle;
 }
 
@@ -242,7 +242,7 @@ p {
 
 #about {
 	padding: 150px 0px;
-	background-image: url(../img/about-bg.jpg);
+	background-image: url(../images/about-bg.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -408,7 +408,7 @@ p {
 }
 
 #blog {
-	background-image: url(../img/blog-bg.jpg);
+	background-image: url(../images/blog-bg.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
