@@ -30,7 +30,12 @@ public class CartController {
         return "redirect:/cart/" + user_id;
     }
 
-    @GetMapping("/checkout")
+    /*@GetMapping("/welcome")
+    public String welcome() throws IOException {
+        return "welcome";
+    }*/
+
+    /*@GetMapping("/checkout")
     public String checkout() throws IOException {
         return "checkout";
     }
