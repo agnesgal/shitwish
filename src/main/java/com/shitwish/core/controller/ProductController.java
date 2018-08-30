@@ -15,6 +15,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class ProductController {
@@ -24,11 +25,15 @@ public class ProductController {
     @GetMapping("/")
     public String displayProducts(Model model){
 
-        JSONObject allProductsJSON = jsonReader.getJson("localhost:50098/product");
+        JSONObject allProductsJSON = jsonReader.getJson("http://product-wishlist-byteme.herokuapp.com/product");
         List<Product> products = new ArrayList<>();
-        for (int i = 1; i <= allProductsJSON.length(); i++) {
+        for (int i = 0; i < allProductsJSON.length(); i++) {
             try {
-                JSONObject productJSON = allProductsJSON.getJSONObject(String.valueOf(i));
+                Set keys = null;
+                keys = allProductsJSON.keySet();
+                Object[] keyList = keys.toArray();
+
+                JSONObject productJSON = allProductsJSON.getJSONObject(String.valueOf(keyList[i]));
                 products.add(new Product(productJSON.getBoolean("is_active"),
                                          productJSON.getBoolean("is_incart"),
                                          productJSON.getInt("price"),
@@ -36,13 +41,13 @@ public class ProductController {
                                          productJSON.getString("name"),
                                          productJSON.getString("img"),
                                          productJSON.getString("descr")));
-                model.addAttribute("products", products);
-                return "index";
+
             } catch (JSONException e) {
                 e.printStackTrace();
                 return "error";
             }
         }
+        model.addAttribute("products", products);
         return "index";
     }
 
