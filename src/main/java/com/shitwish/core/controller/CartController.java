@@ -20,7 +20,6 @@ public class CartController {
 
     @GetMapping("/cart/{user_id}")
     public String getCartListById(@PathVariable ("user_id") int user_id, Model model) throws IOException {
-        //model.addAttribute("cartListById", cartService.getCartListById(user_id));
         model.addAttribute("productList", cartService.getCartListById(user_id));
         return "index";
     }

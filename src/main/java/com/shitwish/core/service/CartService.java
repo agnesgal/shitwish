@@ -37,7 +37,6 @@ public class CartService {
         for (String product_id : productStringIdList) {
             String productUrl = "http://product-wishlist-byteme.herokuapp.com/product/" + product_id;
             Product product = jsonParser.readJsonFromUrlSplitted(productUrl, Product.class);
-            System.out.println(product.toString());
             productList.add(product);
         }
 

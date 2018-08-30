@@ -47,7 +47,8 @@
         <input class="expire" type="text" placeholder="MM / YYYY"/>
         <label>Security Number</label>
         <input class="ccv" type="text" placeholder="CVC" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
-        <form th:href="/"><button type="submit" class="buy" th:text="' Pay $' + ${cartPrices}" method="POST"><i class="material-icons">lock</i> Pay</button></form>
+
+        <form action="/"><button type="submit" class="buy" th:text="' Pay $' + ${cartPrices}">Pay</button></form>
     </div>
 </div>
 </body>
