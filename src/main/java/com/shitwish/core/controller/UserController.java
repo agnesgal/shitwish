@@ -30,7 +30,7 @@ import java.util.HashMap;
 public class UserController {
 
    // @GetMapping("/user/{01}/profile")
-    @GetMapping("/")
+    @GetMapping("/user")
     public String getUserProfile(Model model, HttpServletRequest request) throws JSONException{
 
 //        JSONObject userData = new JSONObject(readFromUrl("https://microservices-userapp.herokuapp.com/sampleuser"));
