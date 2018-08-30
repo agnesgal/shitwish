@@ -2,16 +2,13 @@ package com.shitwish.core.controller;
 
 import com.shitwish.core.model.Product;
 import com.shitwish.core.service.JSONReader;
-import com.sun.org.apache.xpath.internal.operations.Mod;
-import netscape.javascript.JSObject;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.client.RestTemplate;
+
 
 import java.util.ArrayList;
 import java.util.List;
