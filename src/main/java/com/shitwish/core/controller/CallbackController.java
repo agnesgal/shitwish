@@ -28,7 +28,7 @@ public class CallbackController {
     private final String redirectOnSuccess;
 
     public CallbackController() {
-        this.redirectOnFail = "/";
+        this.redirectOnFail = "/error";
         this.redirectOnSuccess = "/products";
     }
 
