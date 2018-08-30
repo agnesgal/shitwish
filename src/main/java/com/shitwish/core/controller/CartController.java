@@ -35,4 +35,10 @@ public class CartController {
     public String checkout() throws IOException {
         return "checkout";
     }
+
+    @GetMapping("/card")
+    public String payment(Model model) throws IOException {
+        model.addAttribute("cartPrices", "45");
+        return "card";
+    }
 }
