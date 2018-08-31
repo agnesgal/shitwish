@@ -24,7 +24,7 @@ public class AuthController {
                 .build();
         userInfoAudience = String.format("https://%s/userinfo", config.getDomain());
         userInfoScope = "openid%20profile%20email";
-        callback = String.format("https://%s:443/callback", config.getDomain());
+        callback = String.format("https://%s"+":443/callback", config.getDomain());
     }
 
     public Tokens handle(HttpServletRequest request) throws IdentityVerificationException {
