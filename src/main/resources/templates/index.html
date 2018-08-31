@@ -161,59 +161,35 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="https://microservices-userapp.herokuapp.com/user" method="post">
+                                            <form action="/useredit" method="post">
                                                 <div class="row">
                                                     <div>
-                                                        <fieldset>
                                                             <input name="firstName" th:type="text" class="form-control" placeholder="Your first name..." required="">
-                                                        </fieldset>
                                                     </div>
                                                     <div>
-                                                        <fieldset>
                                                             <input name="lastName" th:type="text" class="form-control" placeholder="Your last name..." required="">
-                                                        </fieldset>
                                                     </div>
                                                     <div>
-                                                        <fieldset>
                                                             <input name="email" th:type="email" class="form-control" id="email" placeholder="Your email..." required="">
-                                                        </fieldset>
                                                     </div>
                                                     <div>
-                                                        <fieldset>
                                                             <textarea name="phoneNumber" th:type="text" class="form-control" id="message" placeholder="Your phone number..." required=""></textarea>
-                                                        </fieldset>
                                                     </div>
                                                     <div>
-                                                        <fieldset>
-                                                            <textarea name="country" th:type="text" class="form-control" id="message" placeholder="Your country..." required=""></textarea>
-                                                        </fieldset>
+                                                            <input name="country" th:type="text" class="form-control" id="message" placeholder="Your country..." required=""></textarea>
                                                     </div>
                                                     <div>
-                                                        <fieldset>
-                                                            <textarea name="city" th:type="text" class="form-control" id="message" placeholder="Your city..." required=""></textarea>
-                                                        </fieldset>
+                                                            <input name="city" th:type="text" class="form-control" id="message" placeholder="Your city..." required=""></textarea>
                                                     </div>
                                                     <div>
-                                                        <fieldset>
-                                                            <textarea name="zipCode" th:type="text" class="form-control" id="message" placeholder="Your Zip code..." required=""></textarea>
-                                                        </fieldset>
+                                                            <input name="zipCode" th:type="text" class="form-control" id="message" placeholder="Your Zip code..." required=""></textarea>
                                                     </div>
                                                     <div>
-                                                        <fieldset>
-                                                            <textarea name="street" th:type="text" class="form-control" id="message" placeholder="Your street address ..." required=""></textarea>
-                                                        </fieldset>
+                                                            <input name="street" th:type="text" class="form-control" id="message" placeholder="Your street address ..." required=""></input>
                                                     </div>
-                                                    <div>
-                                                        <fieldset>
-                                                            <button type="submit" id="form-submit" class="btn">Submit</button>
-                                                        </fieldset>
-                                                    </div>
+                                                    <input type="submit" id="form-submit" class="btn">Submit</input>
                                                 </div>
                                             </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
                                         </div>
                                     </div>
                                 </div>

@@ -62,7 +62,7 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .antMatchers("/callback", "/welcome","/", "/login2").permitAll()
+                .antMatchers("/callback", "/welcome","/", "/login2", "/useredit").permitAll()
                 .antMatchers("/**").authenticated()
                 .and()
                 .logout().permitAll();

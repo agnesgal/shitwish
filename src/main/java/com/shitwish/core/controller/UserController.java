@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
@@ -27,16 +28,16 @@ public class UserController {
 
 //        JSONObject userData = new JSONObject(readFromUrl("https://microservices-userapp.herokuapp.com/sampleuser"));
 //
-//        String profilePicture = userData.getString("profilePicture");
-//        String firstName = userData.getString("firstName");
-//        String lastName = userData.getString("lastName");
-//        String phoneNum = userData.getString("phoneNumber");
-//        String country = userData.getString("country");
-//        String zip = userData.getString("zipCode");
-//        String city = userData.getString("city");
-//        String street = userData.getString("street");
-////      String usrID = userData.getString("usrID");
-//        String email = userData.getString("email");
+//        String profilePicture ;
+//        String firstName ;
+//        String lastName ;
+//        String phoneNum ;
+//        String country ;
+//        String zip ;
+//        String city ;
+//        String street ;
+////      String usrID ;
+//        String email ;
 
         HashMap[] resultArr;
 
@@ -68,8 +69,38 @@ public class UserController {
         return "index";
     }
 
-    @PostMapping("/microservices-userapp.herokuapp.com/user")
-    public String postUserData() {
-        return "someshit";
+    private static class UserEditForm
+    {
+        public UserEditForm(String firstName, String lastName, String email, String phoneNumber, String country, String city, String zip, String street, String profilePicture) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.email = email;
+            this.phoneNumber = phoneNumber;
+            this.country = country;
+            this.city = city;
+            this.zip = zip;
+            this.street = street;
+        }
+
+        String firstName;
+        String lastName;
+        String email;
+        String phoneNumber;
+        String country;
+        String city;
+        String zip;
+        String street;
     }
+
+    @PostMapping("/useredit")
+    public String postUserData(@RequestBody UserEditForm userEditForm) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            String message = objectMapper.writeValueAsString(userEditForm);
+            HttpResponse<String> response = Unirest.post("https://microservices-userapp.herokuapp.com/user")
+                    .body(message).asString();
+        }catch(Exception e){}
+        return "index";
+    }
+
 }
